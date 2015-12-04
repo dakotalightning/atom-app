@@ -1,13 +1,25 @@
-// var angular = require('../libs/angular/angular/angular.js');
-var app = angular.module('angularApp', []);
+var app = angular.module('angularApp', ['ngRoute']);
 
-app.controller('MainCtrl', ['$scope',function($scope){
-    $scope.test = 'Hello world!';
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider
+        .when('/landing', {
+            controller: 'MainController',
+            templateUrl: 'templates/landing.htm'
+        })
+        .when('/', {
+            controller: 'LoginController',
+            templateUrl: 'templates/login.htm'
+        })
+        .otherwise({
+            redirectTo: '/login'
+        });
+}]);
+
+app.controller('MainController', ['$scope',function($scope){
+
+}]);
 
 
-    $scope.list = [
-        {name : "john", work : "apple", age : "20"},
-        {name : "bob", work : "microsoft", age : "23"}
-    ];
+app.controller('LoginController', ['$scope',function($scope){
 
 }]);

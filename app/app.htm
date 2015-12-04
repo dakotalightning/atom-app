@@ -12,7 +12,9 @@
         <link rel="stylesheet" href="../css/app.css" type="text/css" />
 
         <script>
-            require('../libs/angular/angular/angular.js');
+            require('../libs/angular-1.4.8/angular.min.js');
+            require('../libs/angular-1.4.8/angular-route.min.js');
+            require('../libs/angular-1.4.8/angular-resource.min.js');
             require('./angularApp.js');
         </script>
         <style>
@@ -22,21 +24,11 @@
             }
         </style>
     </head>
-    <body ng-controller="MainCtrl">
+    <body>
 
-    <div>
-
-      <h1>{{test}}</h1>
-
-      <div ng-repeat="item in list">
-          <h1>{{item.name}}</h1>
-          <h3>{{item.work}}</h3>
-          <p>
-              {{item.age}}
-          </p>
-      </div>
-
-    </div>
+        <div class="container">
+            <div ng-view></div>
+        </div>
 
   </body>
 </html>

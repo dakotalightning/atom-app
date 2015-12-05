@@ -27,7 +27,7 @@ app.on('ready', function () {
         win = null;
     });
 
-    win.loadURL('file://' + __dirname + '/app/app.htm');
+    win.loadURL('file://' + __dirname + '/app/app.html');
     win.show();
 
 });

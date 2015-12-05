@@ -1,0 +1,100 @@
+<div class="aside-wrap">
+    <div class="app-aside-footer dk">
+        <div class="dropdown dropup" dropdown>
+            <a href class="pull-right wrapper m-r-xs" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
+                <i class="fa {{app.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
+            </a>
+            <a href class="dropdown-toggle clear hidden-folded wrapper-sm padder" dropdown-toggle>
+                <span class="hidden-sm hidden-md m-t-xs text-ellipsis">John.Smith</span>
+            </a>
+        </div>
+    </div>
+    <div class="navi-wrap">
+        <!-- nav -->
+        <nav ui-nav class="navi clearfix">
+            <!-- list -->
+            <ul class="nav dk">
+                <li class="hidden-folded padder m-t m-b-sm text-muted text-u-c text-xs">
+                    <span>Dashboard</span>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.home">
+                        <i class="icon-disc icon"></i>
+                        <span>Recent Activity</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.genres">
+                        <i class="icon-list icon"></i>
+                        <span>Statistics</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.genres">
+                        <i class="icon-list icon"></i>
+                        <span>Pages</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li class="hidden-folded padder m-t m-b-sm text-muted text-u-c text-xs">
+                    <span>Design</span>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.playlist({fold:'bookmarkd'})">
+                        <i class="icon-star icon"></i>
+                        <span>Layout</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.playlist({fold:'loved'})">
+                        <i class="icon-heart icon"></i>
+                        <span>Modules</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.playlist({fold:'history'})">
+                        <i class="icon-clock icon"></i>
+                        <span>Stylesheets</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.playlist({fold:'history'})">
+                        <i class="icon-clock icon"></i>
+                        <span>Javascripts</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.playlist({fold:'history'})">
+                        <i class="icon-clock icon"></i>
+                        <span>Images</span>
+                    </a>
+                </li>
+
+                <li class="hidden-folded padder m-t m-b-sm text-muted text-u-c text-xs">
+                    <span>Account</span>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.playlist({fold:'nature'})">
+                        <i class="icon-playlist icon"></i>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.playlist({fold:'soundtracks'})">
+                        <i class="icon-playlist icon"></i>
+                        <span>User</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="music.playlist({fold:'soundtracks'})">
+                        <i class="icon-playlist icon"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- / list -->
+        </nav>
+        <!-- nav -->
+    </div>
+</div>

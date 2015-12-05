@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="angularApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular App</title>
+
+        <link rel="stylesheet" href="../libs/assets/animate.css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="../libs/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="../libs/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+        <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="../css/font.css" type="text/css" />
+        <link rel="stylesheet" href="../css/app.css" type="text/css" />
+
+        <script>
+            require('../libs/angular-1.4.8/angular.min.js');
+            require('../libs/angular-1.4.8/angular-route.min.js');
+            require('../libs/angular-1.4.8/angular-resource.min.js');
+            require('./app.js');
+        </script>
+        <style>
+            html,
+            body, body *{
+            -webkit-app-region: no-drag;
+            -webkit-touch-callout: none;
+           -webkit-user-select: none;
+           -khtml-user-select: none;
+           -moz-user-select: none;
+           -ms-user-select: none;
+           user-select: none;
+            }
+        </style>
+    </head>
+    <body ng-controller="AppController">
+
+        <div ng-class="{
+            'app-header-fixed':app.settings.headerFixed,
+            'app-aside-fixed':app.settings.asideFixed,
+            'app-aside-folded':app.settings.asideFolded,
+            'app-aside-dock':app.settings.asideDock,
+            'container':app.settings.container}">
+                <!-- navbar -->
+                <div data-ng-include=" 'templates/blocks/header.html' " class="app-header navbar">
+                </div>
+                <!-- / navbar -->
+
+                <!-- menu -->
+                <div data-ng-include=" 'templates/blocks/aside.html' " class="app-aside hidden-xs {{app.settings.asideColor}}">
+                </div>
+                <!-- / menu -->
+
+                <!-- content -->
+                <div class="app-content">
+                  <div ui-butterbar></div>
+                  <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside" ></a>
+                  <div class="app-content-body fade-in-up" ng-view>
+
+                  </div>
+                </div>
+                <!-- /content -->
+        </div>
+
+  </body>
+</html>

@@ -32,15 +32,16 @@ app.on('ready', function() {
         height: 800,
         minWidth: 1200,
         minHeight: 800,
-        show: false
+        show: false,
+        // frame: false
     });
 
     // and load the index.html of the app.
     mainWindow.loadURL('file://' + __dirname + '/app/app.html');
+    mainWindow.show();
 
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
-    mainWindow.show();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {

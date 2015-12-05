@@ -12,6 +12,18 @@
         <link rel="stylesheet" href="../css/app.css" type="text/css" />
 
         <script>
+            const ipcRenderer = require('electron').ipcRenderer;
+            var updateOnlineStatus = function() {
+                ipcRenderer.send('online-status-changed', navigator.onLine ? 'online' : 'offline');
+            };
+
+            window.addEventListener('online',  updateOnlineStatus);
+            window.addEventListener('offline',  updateOnlineStatus);
+
+            updateOnlineStatus();
+        </script>
+
+        <script>
             require('../libs/angular-1.4.8/angular.min.js');
             require('../libs/angular-1.4.8/angular-route.min.js');
             require('../libs/angular-1.4.8/angular-resource.min.js');
